@@ -10,6 +10,7 @@ class MMSeg{
     public:
         void segment(string *text, vector<string> *words);//分词
         vector<string> segment(string *text);//分词
+        vector<string> segment_v1(string &text);//分词
         bool containsKey(string *term);
         int getVocabSize();
         MMSeg();

@@ -45,9 +45,10 @@ int main(){
         tempText += line;
         if(tempText.length()>500000){
             t1 = TimeProcess::nowTimeMS();
-            vector<string> words;
-            wordSeg.segment(&tempText, &words);
+           // vector<string> words;
+           // wordSeg.segment(&tempText, &words);
             //vector<string> words = wordSeg.segment(&tempText);
+            vector<string> words = wordSeg.segment_v1(tempText);
             t2 = TimeProcess::nowTimeMS();
             totalT += t2-t1;
             string segText = strProcessor.joinStrs(words, " ");

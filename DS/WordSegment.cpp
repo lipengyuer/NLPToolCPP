@@ -13,6 +13,7 @@ class MMSeg{
     public:
         void segment(string *text, vector<string> *words);//分词
         vector<string> segment(string *text);//分词
+        vector<string> segment_v1(string &text);//分词
         bool containsKey(string *term);
         MMSeg();
         int getVocabSize();
@@ -80,15 +81,60 @@ vector<string> MMSeg::segment(string *text){
     int temMaxLength;
     bool flag;
     //int count = 0;
-    while(index<text->length()){
+    while(index<(*text).length()){
         ifWordHere = false;
-        if(index + maxLength > text->length()){
-            temMaxLength = text->length() - index;
+        if(index + maxLength > (*text).length()){
+            temMaxLength = (*text).length() - index;
         }else{
             temMaxLength = maxLength;
             }
         for(int j=temMaxLength; j>0; j--){
-            candWord = text->substr(index, j);
+            candWord = (*text).substr(index, j);
+            //t3 = TimeProcess::nowTimeMS();
+            flag = this->containsKey(&candWord);
+            //t4 = TimeProcess::nowTimeMS();
+           // count += 1;
+           // tSum += t4-t3;
+            if(flag){
+                words.push_back(candWord);
+                index += j;
+                ifWordHere = true;
+                //t4 = TimeProcess::nowTimeMS();
+                break;
+            }
+        }
+        if(!ifWordHere){
+            words.push_back(candWord);
+            index++;
+          }
+    }
+    //t2 = TimeProcess::nowTimeMS();
+   // cout <<text->length() <<" time cost in processing this document is " << t2-t1 << "ms " << " main" << tSum << " " << count << endl;
+    return words;
+};
+
+
+vector<string> MMSeg::segment_v1(string &text){
+    vector<string> words;
+    //int t1, t2, t3, t4;
+   // int tSum = 0;
+   // t1 = TimeProcess::nowTimeMS();
+    int index=0;
+    bool ifWordHere;
+    string tempStr;
+    string candWord;
+    int temMaxLength;
+    bool flag;
+    //int count = 0;
+    while(index<text.length()){
+        ifWordHere = false;
+        if(index + maxLength > text.length()){
+            temMaxLength = text.length() - index;
+        }else{
+            temMaxLength = maxLength;
+            }
+        for(int j=temMaxLength; j>0; j--){
+            candWord = text.substr(index, j);
             //t3 = TimeProcess::nowTimeMS();
             flag = this->containsKey(&candWord);
             //t4 = TimeProcess::nowTimeMS();
