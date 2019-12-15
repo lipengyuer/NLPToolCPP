@@ -1,0 +1,67 @@
+# depslib dependency file v1.0
+1576336594 source:e:\work\cpp\ds\stringprocess.cpp
+	<string>
+	<vector>
+	<iostream>
+
+1576376526 source:e:\work\cpp\ds\test.cpp
+	<iostream>
+	<string>
+	<fstream>
+	<ctime>
+	"StringProcess.h"
+	"WordSegment.h"
+	"FileProcess.h"
+	"TimeProcess.h"
+
+1576336541 e:\work\cpp\ds\stringprocess.h
+	<string>
+	<vector>
+
+1576333945 source:e:\work\cpp\ds\datastructures.cpp
+	<map>
+	<string>
+	<fstream>
+	<iostream>
+	<vector>
+	"StringProcess.h"
+	"TimeProcess.h"
+
+1576376248 e:\work\cpp\ds\wordsegment.h
+	<list>
+	<string>
+	<vector>
+	"DataStructures.h"
+
+1576333930 e:\work\cpp\ds\datastructures.h
+	<map>
+	<string>
+
+1576376514 source:e:\work\cpp\ds\wordsegment.cpp
+	<iostream>
+	<map>
+	<string>
+	<vector>
+	<ctime>
+	"DataStructures.h"
+	"TimeProcess.h"
+
+1576336798 source:e:\work\cpp\ds\fileprocess.cpp
+	<fstream>
+	<iostream>
+	<string>
+	<vector>
+
+1576335974 e:\work\cpp\ds\fileprocess.h
+	<fstream>
+	<iostream>
+	<string>
+	<vector>
+
+1576326341 source:e:\work\cpp\ds\timeprocess.cpp
+	<ctime>
+	<iostream>
+
+1576320525 e:\work\cpp\ds\timeprocess.h
+	<ctime>
+
