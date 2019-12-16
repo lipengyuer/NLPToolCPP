@@ -65,3 +65,69 @@
 1576320525 e:\work\cpp\ds\timeprocess.h
 	<ctime>
 
+1576458187 source:e:\work\learn\nlptoolcpp\ds\datastructures.cpp
+	<map>
+	<string>
+	<fstream>
+	<iostream>
+	<vector>
+	"StringProcess.h"
+	"TimeProcess.h"
+
+1576458187 e:\work\learn\nlptoolcpp\ds\stringprocess.h
+	<string>
+	<vector>
+
+1576458187 e:\work\learn\nlptoolcpp\ds\timeprocess.h
+	<ctime>
+
+1576458187 source:e:\work\learn\nlptoolcpp\ds\fileprocess.cpp
+	<fstream>
+	<iostream>
+	<string>
+	<vector>
+
+1576458187 source:e:\work\learn\nlptoolcpp\ds\stringprocess.cpp
+	<string>
+	<vector>
+	<iostream>
+
+1576458188 source:e:\work\learn\nlptoolcpp\ds\test.cpp
+	<iostream>
+	<string>
+	<fstream>
+	<ctime>
+	"StringProcess.h"
+	"WordSegment.h"
+	"FileProcess.h"
+	"TimeProcess.h"
+
+1576458187 e:\work\learn\nlptoolcpp\ds\wordsegment.h
+	<list>
+	<string>
+	<vector>
+	"DataStructures.h"
+
+1576458187 e:\work\learn\nlptoolcpp\ds\datastructures.h
+	<map>
+	<string>
+
+1576458187 e:\work\learn\nlptoolcpp\ds\fileprocess.h
+	<fstream>
+	<iostream>
+	<string>
+	<vector>
+
+1576458187 source:e:\work\learn\nlptoolcpp\ds\timeprocess.cpp
+	<ctime>
+	<iostream>
+
+1576458187 source:e:\work\learn\nlptoolcpp\ds\wordsegment.cpp
+	<iostream>
+	<map>
+	<string>
+	<vector>
+	<ctime>
+	"DataStructures.h"
+	"TimeProcess.h"
+

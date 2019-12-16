@@ -31,6 +31,17 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="DataStructures.cpp" />
+		<Unit filename="DataStructures.h" />
+		<Unit filename="FileProcess.cpp" />
+		<Unit filename="FileProcess.h" />
+		<Unit filename="StringProcess.cpp" />
+		<Unit filename="StringProcess.h" />
+		<Unit filename="TimeProcess.cpp" />
+		<Unit filename="TimeProcess.h" />
+		<Unit filename="WordSegment.cpp" />
+		<Unit filename="WordSegment.h" />
+		<Unit filename="test.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

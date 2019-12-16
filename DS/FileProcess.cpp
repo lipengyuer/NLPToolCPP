@@ -14,20 +14,25 @@ class FileProcess{
 
 vector<string> FileProcess::readLines(string fileName){
     vector<string> lines;
-    ifstream fileHandle(fileName);
+    ifstream fileHandle(fileName.c_str());
     string line;
     while(getline(fileHandle, line)){
-        //cout << "text is " << line << endl;
+        //cout << "text is " << line.length() << endl;
         lines.push_back(line);
     }
+    //for(string line : lines){
+   //	for(int i=0; i<lines.size(); i++){
+   	//	line = lines[i];
+//        cout << "text is " << line.length() << endl;
+   // }
     fileHandle.close();
     return lines;
 }
 
  void FileProcess::addLine(string filePath, string text){
 
-    ofstream fileHandle(filePath, ios::app);
-    fileHandle << text << endl;
-    fileHandle.close();
+    ofstream fileHandle1(filePath.c_str());//, ios::app);
+    fileHandle1 << text << endl;
+    fileHandle1.close();
  }
 

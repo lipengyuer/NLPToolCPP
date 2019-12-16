@@ -45,10 +45,10 @@ vector<string> Dictionary::split_v2(string text, string delimStr){
 
 
 void Dictionary::loadVocab(){
-    ifstream vocab("E:\\work\\data\\CoreNatureDictionary.txt");
+    ifstream vocab("E:\\work\\learn\\CPPTest\\data\\CoreNatureDictionary.txt");
     string line;
     while(getline(vocab, line)){
-        //cout<< line<< " "<<this->dict.size() << endl;
+        //out<< line<< " "<<this->dict.size() << endl;
         vector<string> slices;
         slices = this->split_v2(line, "\t");
         if(slices.size()==0){

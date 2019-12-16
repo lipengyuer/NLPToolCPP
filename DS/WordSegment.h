@@ -6,7 +6,7 @@ using namespace std;
 class MMSeg{
     protected:
         Dictionary dict;
-        int maxLength = 10;
+        int maxLength;
     public:
         void segment(string *text, vector<string> *words);//分词
         vector<string> segment(string *text);//分词

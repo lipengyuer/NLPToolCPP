@@ -15,23 +15,16 @@ int main(){
 
     cout << "start to load corpus " << endl;
     FileProcess fileProcessor;
-    vector<string> documents = fileProcessor.readLines("E:\\work\\data\\tlbb.txt");
+    vector<string> documents = fileProcessor.readLines("E:\\work\\learn\\CPPTest\\data\\activity_original.txt");
     cout << "finish loading corpus " << documents.size()<< endl;
 
     MMSeg wordSeg;
     int vocabSize = wordSeg.getVocabSize();
     cout << "词典的大小是" << vocabSize << endl;
-    string word = u8"love";
-    if(wordSeg.containsKey(&word)){
-        cout << "the word is contained " << endl;
-    }
 
     string sentence = "ilovethisworld";
     vector<string> words;
     wordSeg.segment(&sentence, &words);
-    for(string word: words){
-        cout<< word << endl;
-    }
     cout << "word number is " << words.size()<< endl;
 
     int count = 0;
@@ -41,14 +34,20 @@ int main(){
     string tempText = "";
     cout << "start timestamp is "<<TimeProcess::nowTimeMS()/1000 << endl;
     StringProcess strProcessor;
-    for(string line: documents){
+    string line; 
+    for(int i = 0; i< documents.size(); i++){
+    	line = documents[i];
         tempText += line;
-        if(tempText.length()>500000){
+         
+        if(tempText.length()>50000){
+//        	cout << "1text length is " <<tempText.length()<< endl;
             t1 = TimeProcess::nowTimeMS();
-           // vector<string> words;
-           // wordSeg.segment(&tempText, &words);
+//            vector<string> words;
+//            wordSeg.segment(&tempText, &words);
             //vector<string> words = wordSeg.segment(&tempText);
+            
             vector<string> words = wordSeg.segment_v1(tempText);
+//            cout << "2text length is " <<tempText.length()<< endl;
             t2 = TimeProcess::nowTimeMS();
             totalT += t2-t1;
             string segText = strProcessor.joinStrs(words, " ");

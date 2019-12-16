@@ -70,7 +70,10 @@ void StringProcess::split_v2(vector<string> &slices, string text, string delimSt
 
 string StringProcess::joinStrs(vector<string> terms, string delimStr){
     string text = "";
-    for(string term: terms){
+    string term = "";
+  //  for(string term: terms){
+    for(int i = 0; i< terms.size(); i++) {
+	    term = terms[i];
        // subText += (string)text[i];
         text += term + delimStr;
     }

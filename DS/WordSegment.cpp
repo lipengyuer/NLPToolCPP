@@ -116,16 +116,17 @@ vector<string> MMSeg::segment(string *text){
 
 vector<string> MMSeg::segment_v1(string &text){
     vector<string> words;
-    //int t1, t2, t3, t4;
-   // int tSum = 0;
-   // t1 = TimeProcess::nowTimeMS();
+//    int t1, t2, t3, t4;
+//    int tSum = 0;
+//    t1 = TimeProcess::nowTimeMS();
     int index=0;
     bool ifWordHere;
     string tempStr;
     string candWord;
-    int temMaxLength;
+    int temMaxLength = 0;
     bool flag;
-    //int count = 0;
+    int count = 0;
+   // cout << "text.length() is " << text.length() << endl;
     while(index<text.length()){
         ifWordHere = false;
         if(index + maxLength > text.length()){
@@ -133,28 +134,32 @@ vector<string> MMSeg::segment_v1(string &text){
         }else{
             temMaxLength = maxLength;
             }
+         //cout << "text.length() is " << temMaxLength<< endl;
         for(int j=temMaxLength; j>0; j--){
             candWord = text.substr(index, j);
-            //t3 = TimeProcess::nowTimeMS();
+//            t3 = TimeProcess::nowTimeMS();
             flag = this->containsKey(&candWord);
-            //t4 = TimeProcess::nowTimeMS();
-           // count += 1;
-           // tSum += t4-t3;
+//            t4 = TimeProcess::nowTimeMS();
+            
+//            count += 1;
+//            tSum += t4-t3;
             if(flag){
                 words.push_back(candWord);
                 index += j;
                 ifWordHere = true;
-                //t4 = TimeProcess::nowTimeMS();
+//                t4 = TimeProcess::nowTimeMS();
                 break;
             }
+           
         }
         if(!ifWordHere){
             words.push_back(candWord);
+            
             index++;
           }
     }
-    //t2 = TimeProcess::nowTimeMS();
-   // cout <<text->length() <<" time cost in processing this document is " << t2-t1 << "ms " << " main" << tSum << " " << count << endl;
+//    t2 = TimeProcess::nowTimeMS();
+    //cout <<text.length() <<" time cost in processing this document is " << t2-t1 << "ms " << " main" << tSum << " " << count << endl;
     return words;
 };
 
