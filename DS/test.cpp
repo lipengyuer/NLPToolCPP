@@ -39,7 +39,7 @@ int main(){
     	line = documents[i];
         tempText += line;
          
-        if(tempText.length()>50000){
+        if(tempText.length()>20000){
 //        	cout << "1text length is " <<tempText.length()<< endl;
             t1 = TimeProcess::nowTimeMS();
 //            vector<string> words;
@@ -53,7 +53,7 @@ int main(){
             string segText = strProcessor.joinStrs(words, " ");
             fileProcessor.addLine("result.txt", segText);
             cout << "total time cost is " << t2-t1 <<" total is " << totalT/1000<< endl;
-            charNum += tempText.length();
+            charNum += words.size();
             tempText = "";
             count++;
             if(count%500==0){
